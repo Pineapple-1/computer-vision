@@ -7,6 +7,7 @@ GRAY = cv.cvtColor(COINS, cv.COLOR_BGR2GRAY)
 GAUSSION = cv.GaussianBlur(GRAY,(3,3),0)
 # YOU CAN USE BLURED IMAGE OR NORMAL
 REC,THRESH = cv.threshold(GAUSSION , 95, 255, cv.THRESH_BINARY)
+# CONNECTED COMPONENTS TAKES BINARY IMAGE , CONNECTIVITY (4 OR 8) 
 n_components, labels, stats, centroids = cv.connectedComponentsWithStats(THRESH,8,cv.CV_32S)
 for x in range(1,11): 
     diameter = stats[x, cv.CC_STAT_WIDTH]
