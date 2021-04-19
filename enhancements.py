@@ -18,4 +18,5 @@ after_Girl =cv.filter2D(Girl, -1, 2)
 
 cv.imshow('Girl',Girl)
 cv.imshow('after_Girl',after_Girl)
+cv.imshow('zebra',Zebra)
 cv.waitKey(0)
