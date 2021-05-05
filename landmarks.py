@@ -2,15 +2,12 @@ import cv2 as cv
 import mediapipe as mp
 import time
 
-
 mpDraw = mp.solutions.drawing_utils
 mpFaceMesh = mp.solutions.face_mesh
-faceMesh = mpFaceMesh.FaceMesh(max_num_faces=2)
+faceMesh = mpFaceMesh.FaceMesh()
 drawSpecs = mpDraw.DrawingSpec(thickness=1, circle_radius=1)
 cap = cv.VideoCapture('Videos/mkbhd.mp4')
-
 pTime = 0
-
 
 def Rescale(frame, scale=0.50):
     # FOR PICTURES,VIDEO,LIVE JUST T0 MAKE IT FIT
@@ -18,7 +15,6 @@ def Rescale(frame, scale=0.50):
     height = int(frame.shape[0]*scale)
     dim = (width, height)
     return cv.resize(frame, dim, interpolation=cv.INTER_AREA)
-
 
 while True:
     istrue, frame = cap.read()
