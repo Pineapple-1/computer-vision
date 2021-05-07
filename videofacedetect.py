@@ -40,8 +40,7 @@ while True:
         for id, detection in enumerate(results.detections):
             bboxc = detection.location_data.relative_bounding_box
             height, width = resize.shape[:2]
-            bbox = int(bboxc.xmin * width), int(bboxc.ymin *
-                                                height), int(bboxc.width * width), int(bboxc.height * height)
+            bbox = int(bboxc.xmin * width), int(bboxc.ymin *height), int(bboxc.width * width), int(bboxc.height * height)
             cv.rectangle(resize, bbox, (255, 0, 255), 1)
             cv.putText(resize, f'{round(detection.score[0]*100)}%', (bbox[0],
                                                                      bbox[1]-20), cv.FONT_HERSHEY_PLAIN, 1, (255, 0, 255), thickness=1)
