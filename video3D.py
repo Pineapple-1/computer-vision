@@ -12,7 +12,7 @@ def Rescale(frame, scale=0.75):
 
 
 cap = cv2.VideoCapture('Videos\shoes.mp4')
-with mp_objectron.Objectron(static_image_mode=False,max_num_objects=4,min_detection_confidence=0.5,min_tracking_confidence=0.99,model_name='Shoe') as objectron:
+with mp_objectron.Objectron(static_image_mode=False,max_num_objects=4,min_detection_confidence=0.6,min_tracking_confidence=0.5,model_name='Shoe') as objectron:
   while True:
     success, image = cap.read()
 
