@@ -1,4 +1,9 @@
 import cv2 as cv
+
+
+
+
+
 PERSON =cv.imread('Photos/group 1.jpg')
 GRAY = cv.cvtColor(PERSON,cv.COLOR_BGR2GRAY)
 HARR_CASSCADE= cv.CascadeClassifier('harr_face.xml')

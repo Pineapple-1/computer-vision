@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 mp_drawing = mp.solutions.drawing_utils
 mp_objectron = mp.solutions.objectron
-objectron=mp_objectron.Objectron(static_image_mode=True,max_num_objects=5,min_detection_confidence=0.6,model_name='Shoe')
+objectron=mp_objectron.Objectron(static_image_mode=True,max_num_objects=5,min_detection_confidence=0.5,model_name='Shoe')
 drawSpecs = mp_drawing.DrawingSpec(color= (200,220,140),thickness=2, circle_radius=1)
 file_list = ['Photos\kmodo.JPG','Photos\sneeker.JPG','Photos/nike.jpg','Photos\chair.jpg']
 def Rescale(frame, scale=0.75):
@@ -12,8 +12,8 @@ def Rescale(frame, scale=0.75):
     dim = (width, height)
     return cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
 
-image = cv2.imread(file_list[2])
-image = Rescale(image, 0.25)
+image = cv2.imread(file_list[0])
+
     # Convert the BGR image to RGB and process it with MediaPipe Objectron.
 results = objectron.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     # Draw box landmarks.
