@@ -19,8 +19,7 @@ def train():
             IMG_PATH = os.path.join(PATH, IMG)
             IMG_ARRAY = cv.imread(IMG_PATH)
             GRAY_ARRAY = cv.cvtColor(IMG_ARRAY, cv.COLOR_BGR2GRAY)
-            FACE = HARR_CASSCADE.detectMultiScale(
-                GRAY_ARRAY, scaleFactor=1.1, minNeighbors=4)
+            FACE = HARR_CASSCADE.detectMultiScale(GRAY_ARRAY, scaleFactor=1.1, minNeighbors=4)
 
             for (x, y, w, z) in FACE:
                 FACES = GRAY_ARRAY[y:y+z, x:x+w]

@@ -4,7 +4,7 @@ PEOPLE = ['Ben Afflek', 'Elton John','Jerry Seinfield', 'Madonna', 'Mindy Kaling
 
 face_recogniser = cv.face.LBPHFaceRecognizer_create()
 face_recogniser.read('face_trained.yml')
-image = cv.imread(r'Faces\val\ben_afflek\5.jpg')
+image = cv.imread(r'Faces\val\ben_afflek\1.jpg')
 gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
 face_rect = HARR_CASSCADE.detectMultiScale(gray, 1.1, 4)
